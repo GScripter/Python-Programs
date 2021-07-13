@@ -1,4 +1,5 @@
-# My-Programs-Python 🐍
+<h1 align=center>My-Programs-Python 🐍</h1>
+
 ### Directory with some projects mine:
 * <a href='#Install-videos-Youtube'>Install-videos-Youtube</a>
 * <a href='#Tic-tac-toe'>Tic-tac-toe</a>
