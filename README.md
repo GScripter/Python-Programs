@@ -1,6 +1,6 @@
 <h1 align=center>My-Programs-Python 🐍</h1>
 
-### My collection of Python Programs
+### My collection of Python Programs:
 * <a href='#Install-videos-Youtube'>Install-videos-Youtube</a>
 * <a href='#Tic-tac-toe'>Tic-tac-toe</a>
 * <a href='#Search-in-the-file'>Search-in-the-file</a>
