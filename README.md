@@ -5,6 +5,7 @@
 * <a href='#Tic-tac-toe'>Tic-tac-toe</a>
 * <a href='#Search-in-the-file'>Search-in-the-file</a>
 * <a href='#Hangman'>Hangman</a>
+* <a href='#Covid'>Covid-19</a>
  
  ## Requirements:
  * pkg install python
@@ -37,6 +38,11 @@
         
         python forca.py
     
-    
+    ## <a id='Covid' href='#Covid'>Covid-19</a>
+        cd Covid
+        
+        pip install covid
+        
+        python Covid-19.py
     
 
