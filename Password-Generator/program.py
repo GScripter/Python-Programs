@@ -64,6 +64,7 @@ class PasswordGenerator:
         self.quantidade = quantidade
 
 
+    # Gerar Senhas
     def gerar(self):
         senhas = []
         n=lg=lp=c=False
@@ -85,26 +86,11 @@ class PasswordGenerator:
                     break
                 else:
                     n=lg=lp=c=False
-        if self.tamanho <= 20:
-            print('—'*20)
-            print('\033[1;32m{:^20}\033[m'.format('Senhas Geradas'))
-            print('—'*20)
-        else:
-            t = self.tamanho+2
-            print('—'*t)
-            print(f'\033[1;32m{"Senha(s) Gerada(s)"}\033[m'.center(t+10))
-            print('—'*t)
-        sleep(.5)
-        for c in senhas:
-            sleep(.5)
-            for i in c:
-                print(i,end='')
-            print()
-        if self.tamanho <= 20:
-            print('—'*20)
-        else:
-            print('—'*t)
-        # Salvar senha(s) em um arquivo de texto.
+        return senhas
+
+
+    # Salvar senha(s) em um arquivo de texto.
+    def salvar(self,senhas):
         while True:
             try:
                 res = str(input('Deseja Salvar em um Arquivo? [S/n] '))
@@ -128,7 +114,7 @@ class PasswordGenerator:
                                 abrir.write(i)
                             abrir.write('\n')
                         abrir.close()
-                        print(f'\033[1;32mArquivo Senha-Gerada-Em-{arquivo} salvo com sucesso no caminho {os.getcwd()}/MinhasSenhas/\033[m')
+                        print(f'\033[1;32mArquivo \033[1;33mSenha-Gerada-Em-{arquivo} \033[1;32msalvo com sucesso no caminho \033[1;33m{os.getcwd()}/MinhasSenhas/\033[m')
                         break
                     else:
                         break
@@ -165,9 +151,30 @@ while continua:
                 if quantidade >= 1:
                     # Instancia da classe
                     obj = PasswordGenerator(tamanho,quantidade)
-                    obj.gerar()
+                    gerar_senhas = obj.gerar()
+                    if tamanho <= 20:
+                        print('—'*20)
+                        print('\033[1;32m{:^20}\033[m'.format('Senhas Geradas'))
+                        print('—'*20)
+                    else:
+                        print('—'*tamanho)
+                        print(f'\033[1;32m{"Senha(s) Gerada(s)"}\033[m'.center(tamanho+10))
+                        print('—'*tamanho)
+                    sleep(.5)
+                    for c in gerar_senhas:
+                        sleep(.5)
+                        for i in c:
+                            print(i,end='')
+                        print()
+                    if tamanho <= 20:
+                        print('—'*20)
+                    else:
+                        print('—'*tamanho)
+                    # Salvar senha(s) em um arquivo de texto.
+                    obj.salvar(gerar_senhas)
                     break
-                vaca(' Não tem como gerar 0 senhas. \n  Por Favor Digite Novamente. ',cores['vermelho'],30)
+                else:
+                    vaca(' Não tem como gerar 0 senhas. \n  Por Favor Digite Novamente. ',cores['vermelho'],30)
     # Perguntar e validar escolha de parar ou rodar novamente o programa.
     if continua:
         while True:
