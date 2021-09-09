@@ -6,6 +6,7 @@
 * <a href='#Search-in-the-file'>Search-in-the-file</a>
 * <a href='#Hangman'>Hangman</a>
 * <a href='#Covid'>Covid-19</a>
+* <a href='#Password-Generator'>Password-Generator</a>
  
  ## Requirements:
  * pkg install python
@@ -45,4 +46,8 @@
         
         python Covid-19.py
     
+    ## <a id='Password-Generator' href='#Password-Generator'>Password-Generator</a>
+        cd Password-Generator
+          
+        python program.py
 

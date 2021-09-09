@@ -1,7 +1,7 @@
 from random import choices
 from time import sleep
 from datetime import datetime, date
-import os
+import os, string, secrets
 
 
 print('''\033[34m
@@ -27,7 +27,7 @@ print('''\033[34m
   - O tamanho mínimo possível de senha é 6.
   - A quantidade de senhas que podem ser geradas é ilimitada.
   - Ctrl + c Interrompe o programa em qualquer parte do código.
-  - [S/n] Caso nada seja digitado em continuar, o S será usado como padrão.
+  - [S/n] Isso significa que caso nada seja digitado o S será usado como padrão.
   - As senhas são salvas na pasta MinhasSenhas
   - Github: https://github.com/GabrielSantos198/\033[m
 ''')
@@ -51,46 +51,38 @@ def vaca(msg,cor,q):
 
 
 
-class PasswordGenerator:
-    nums = '0123456789'
-    letras_g = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    letras_p = letras_g.lower()
-    crt = '!@#$%^&*()?:.,;-=+\|/'
-    tudo = nums + letras_p + letras_g + crt
+class GeradordeSenhas:
+    tudo = string.ascii_letters + string.digits + string.punctuation
 
 
-    def __init__(self, tamanho=6, quantidade=1):
+    def __init__(self, tamanho, quantidade):
         self.tamanho = tamanho
         self.quantidade = quantidade
 
 
     # Gerar Senhas
     def gerar(self):
+        """
+        Método que gera senha ou grupos de senhas e as retorna em forma de lista.
+        """
         senhas = []
-        n=lg=lp=c=False
-        for c in range(0, quantidade):
-            while True:
-                senha = choices(self.tudo,k=tamanho)
-                for c in senha:
-                    if c in self.nums:
-                        n = True
-                    elif c in self.letras_g:
-                        lg = True
-                    elif c in self.letras_p:
-                        lp = True
-                    elif c in self.crt:
-                        c = True
-                if n == True and lg == True and lp == True and c == True:
-                    n=lg=lp=c=False
-                    senhas.append(senha)
-                    break
-                else:
-                    n=lg=lp=c=False
+        for total in range(0, self.quantidade):
+            instancia = secrets.SystemRandom()
+            senha = instancia.choices(GeradordeSenhas.tudo,k=self.tamanho-4)
+            # Presença aleatória obrigatória nas senhas
+            p = instancia.choice(string.ascii_lowercase)
+            g = instancia.choice(string.ascii_uppercase)
+            crt = instancia.choice(string.punctuation) 
+            n = instancia.choice(string.digits)
+            senhas.append(instancia.sample(g+p+crt+n,k=4)+senha)
         return senhas
 
 
-    # Salvar senha(s) em um arquivo de texto.
+    # Salvar senha(s) em um arquivo de texto ou não.
     def salvar(self,senhas):
+        """
+        Esse Método irá receber a lista de senha(s) retornadas pelo método gerar. E trabalhará para tornar possível salvá-la em arquivo de texto de forma organizada.
+        """
         while True:
             try:
                 res = str(input('Deseja Salvar em um Arquivo? [S/n] '))
@@ -150,7 +142,7 @@ while continua:
             else:
                 if quantidade >= 1:
                     # Instancia da classe
-                    obj = PasswordGenerator(tamanho,quantidade)
+                    obj = GeradordeSenhas(tamanho,quantidade)
                     gerar_senhas = obj.gerar()
                     if tamanho <= 20:
                         print('—'*20)
