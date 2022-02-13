@@ -1,53 +1,67 @@
-<h1 align=center>My-Programs-Python 🐍</h1>
+<h1 align=center>My Programs Python 🐍</h1>
 
 ### My collection of Python Programs:
-* <a href='#Install-videos-Youtube'>Install-videos-Youtube</a>
-* <a href='#Tic-tac-toe'>Tic-tac-toe</a>
-* <a href='#Search-in-the-file'>Search-in-the-file</a>
-* <a href='#Hangman'>Hangman</a>
-* <a href='#Covid'>Covid-19</a>
-* <a href='#Password-Generator'>Password-Generator</a>
+* <a href="#install-videos-youtube">Install-videos-Youtube</a>
+* <a href='#tic-tac-toe'>Tic-tac-toe</a>
+* <a href='#search-in-the-file'>Search-in-the-file</a>
+* <a href='#hangman'>Hangman</a>
+* <a href='#covid'>Covid-19</a>
+* <a href='#password-generator'>Password-Generator</a>
+* <a href='#quiz'>Quiz</a>
  
  ## Requirements:
- * pkg install python
+ * sudo apt install python git
  
- * pkg install git
- 
- * git clone https://github.com/GabrielSantos198/My-Programs-Python
+ * git clone https://github.com/GabrielSantos198/Python-Programs
  
  ## Use:
- * cd My-Programs-Python
+ * cd Python-Programs
  
-    ## <a id='Install-videos-Youtube' href='#Install-videos-Youtube'>Install-videos-Youtube</a>
+    <h2 id="install-videos-youtube">Install-videos-Youtube</h2>
+
        pip install pytube
        
        cd Install-videos-Youtube
        
        python program.py
-    ## <a id='Tic-tac-toe' href='#Tic-tac-toe'>Tic-tac-toe</a>
+
+    <h2 id="tic-tac-toe">Tic-tac-toe</h2>
+
         cd Tic-tac-toe
         
         python jogo.py
     
-    ## <a id='Search-in-the-file' href='#Search-in-the-file'>Search-in-the-file</a>
+    <h2 id="search-in-the-file">Search-in-the-file</h2>
+
         cd Search-in-the-file
         
         python program.py
     
-    ## <a id='Hangman' href='#Hangman'>Hangman</a>
+    <h2 id="hangman">Hangman</h2>
+
         cd Hangman
         
         python forca.py
     
-    ## <a id='Covid' href='#Covid'>Covid-19</a>
+    <h2 id="covid-19">Covid-19</h2>
+
         cd Covid
         
         pip install covid
         
         python Covid-19.py
     
-    ## <a id='Password-Generator' href='#Password-Generator'>Password-Generator</a>
+    <h2 id="password-generator">Password-Generator</h2>
+
         cd Password-Generator
           
         python program.py
+
+    <h2 id="#quiz">Quiz</h2>
+
+        sudo apt install espeak
+
+        cd Quiz
+          
+        python quiz.py
 

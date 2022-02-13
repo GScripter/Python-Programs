@@ -1,0 +1,3 @@
+[submodule "Quiz"]
+	path = Quiz
+	url = https://github.com/GabrielSantos198/Quiz
