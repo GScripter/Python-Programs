@@ -12,7 +12,7 @@
  ## Requirements:
  * sudo apt install python git
  
- * git clone https://github.com/GabrielSantos198/Python-Programs
+ * git clone https://github.com/GScripter/Python-Programs
  
  ## Use:
  * cd Python-Programs
